@@ -11,9 +11,19 @@ That installs `TUFF.app` and the `tuff` command. TUFF updates itself, and
 `brew upgrade --cask tuff` works too. TUFF isn't notarized, so the first time,
 Control-click the app and choose Open.
 
-If you tapped TUFF before it moved here (`brew tap tuff-app/tuff` or
-`brew tap rexmhall09/tuff`), Homebrew moves your install to this tap on the
-next `brew update`.
+If you tapped TUFF before it moved here (`brew tap rexmhall09/tuff` or
+`brew tap tuff-app/tuff`), `brew update` points you here but won't move your
+install by itself. Move it once with:
+
+```sh
+brew tap tuff-app/tap
+brew trust tuff-app/tap/tuff
+brew reinstall tuff
+```
+
+Then you can remove the old tap with `brew untap rexmhall09/tuff` (or
+`tuff-app/tuff`). Until you do, TUFF still updates itself; only
+`brew upgrade` stops seeing new versions.
 
 The cask is updated with each release from the app's packaged ZIP
 (`Scripts/update_homebrew.py` in TUFF). It must never get a `zap` stanza that
