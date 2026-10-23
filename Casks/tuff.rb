@@ -5,7 +5,7 @@ cask "tuff" do
   url "https://github.com/tuff-app/TUFF/releases/download/v#{version}/TUFF-v#{version}-macos-arm64.zip"
   name "TUFF"
   desc "Run local language models, including ones bigger than your memory"
-  homepage "https://tuff-app.github.io/TUFF/"
+  homepage "https://tuff-app.github.io/"
 
   auto_updates true
   depends_on arch: :arm64
